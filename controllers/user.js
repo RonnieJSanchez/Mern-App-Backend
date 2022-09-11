@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const User = require('../models/user')
-const location = require('../models/locations')
+const Location = require('../models/location')
 
 router.get('/', async (req, res) => {
     try {
@@ -47,12 +47,8 @@ router.delete('/:id', async (req, res) => {
 
 router.post('/create', async (req, res) => {
     try {
-        const { username, password, age, name } = req.body
-        console.log(username, password)
+        const { name } = req.body
         const createdUser = await new User({
-            username,
-            password,
-            age,
             name
         }).save()
 

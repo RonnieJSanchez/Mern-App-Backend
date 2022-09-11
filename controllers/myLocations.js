@@ -1,10 +1,10 @@
 const router = require('express').Router()
-const location = require('../models/location')
+const Location = require('../models/location')
 const User = require('../models/user')
 
 router.get('/', async (req, res) => {
     try {
-        let locations = await location.find()
+        let locations = await Location.find()
         res.send(locations)
     } catch (error) {
         console.log(error)
@@ -14,13 +14,13 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const location = await new location({
+        const location = await new Location({
             ...req.body
         }).save()
         
         const existingUser = await User.findById(req.body.user)
         existingUser.locations.push(location._id)
-        let updatedUser = await User.findByIdAndUpdate(req.body.user, existingUser)
+        let updatedUser = await User.findByIdAndUpdate(req.body.user,existingUser)
 
     
         res.send(location)

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/RonnieJSanchez/Mern-App-Backend/issues"
   },
-  "homepage": "https://github.com/RonnieJSanchez/Mern-App-Backend#readme"
+  "homepage": "https://github.com/RonnieJSanchez/Mern-App-Backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
 }

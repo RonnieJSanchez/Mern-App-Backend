@@ -1,20 +1,17 @@
 const mongoose = require('mongoose')
 
 const locationSchema = new mongoose.Schema({
-    type: {
+    countryName: {
         type: String,
         required: true,
-        enum: ['guitar', 'mayonnaise', 'drums', 'bass', 'piano']
     },
-    brand: {
+    cityName:{
         type: String,
-        required: true
+        required: true,   
     },
-    model: {
-        type: String
-    },
-    price: {
-        type: Number
+    photo:{
+        type: String,
+        required: true,
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -25,4 +22,4 @@ const locationSchema = new mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('location', locationSchema)
+module.exports = mongoose.model('Location', locationSchema)
