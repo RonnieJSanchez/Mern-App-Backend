@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
 
 const locationSchema = new mongoose.Schema({
     countryName: {
@@ -16,10 +17,15 @@ const locationSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
-    }
+        required: true,  
+    },
+    VisitDate:{
+        type: Date,
+        required: true,
+    },
 }, {
     timestamps: true
 })
+const Location= mongoose.model('Location', locationSchema)
 
-module.exports = mongoose.model('Location', locationSchema)
+module.exports = Location;

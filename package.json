@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "EXPRESS_PORT=3000 nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,15 @@
   },
   "homepage": "https://github.com/RonnieJSanchez/Mern-App-Backend#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3"
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "moongose": "^1.0.0",
+    "node": "^18.9.0",
+    "nodemon": "^2.0.19",
+    "react": "^18.2.0"
   }
 }

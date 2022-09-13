@@ -1,10 +1,11 @@
 const router = require('express').Router()
+const { rmSync } = require('fs')
 const User = require('../models/user')
-const Location = require('../models/location')
+const Locations = require('../models/Locations')
 
 router.get('/', async (req, res) => {
     try {
-        const users = await User.find().populate('locations')
+        const users = await User.find().populate('myLocations')
 
         res.json(users)
     } catch (error) {
@@ -58,7 +59,7 @@ router.post('/create', async (req, res) => {
     }
 })
 
-router.put('/add/location/:id', async(req, res) => {
+router.put('/add/myLocations/:id', async(req, res) => {
     try {
         const { locationId } = req.body
         const { id } = req.params 
